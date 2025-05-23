@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #4B2C1A;
+    color: #F5E8D0;
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.cabecalho h1 {
+    color: #F5E8D0;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.cabecalho p {
+    color: #C97B4E;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #F5E8D0;
+    padding: 0.5rem; 
+    display: inline-block;
+}
+
+.navbar ul li {
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li:hover {
+    transform: scale(1.1);
+}
+
+.banner {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+main {
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categorias h1 {
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #F5E8D0;
+}
+
+/* CONTAINERS COMPACTADOS */
+.entradas-container,
+.principais-container,
+.sobremesas-container,
+.bebidas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.entradas-info,
+.principais-info,
+.sobremesas-info,
+.bebidas-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(41, 25, 25, 0.3);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.entradas-info:hover,
+.principais-info:hover,
+.sobremesas-info:hover,
+.bebidas-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.entradas-info img,
+.principais-info img,
+.sobremesas-info img,
+.bebidas-info img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.entradas-info img:hover,
+.principais-info img:hover,
+.sobremesas-info img:hover,
+.bebidas-info img:hover {
+    transform: scale(1.03);
+}
+
+.entradas-info h2,
+.principais-info h2,
+.sobremesas-info h2,
+.bebidas-info h2 {
+    color: #F5E8D0;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin-top: 0.5rem;
+}
+
+.entradas-info p,
+.principais-info p,
+.sobremesas-info p,
+.bebidas-info p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: #C97B4E;
+}
+
+#valor {
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #F5E8D0 ;
+    margin-top: 0.5rem;
+}
+
+footer {
+    background-color: #29191977;
+    color: #f2e6d8;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.endereco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    color: #f2e6d8;
+}
+
+.endereco img {
+    width: 20px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.contatos img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.2s ease;
+    filter: brightness(0) invert(1);
+}
+
+.contatos img:hover {
+    transform: scale(1.1);
+}
+
+/* MEDIA QUERIES PARA AJUSTES ESPECÍFICOS */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 0.5rem;
+    }
+    
+    .entradas-container,
+    .principais-container,
+    .sobremesas-container,
+    .bebidas-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        padding: 1.5rem 1rem;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    .entradas-container,
+    .principais-container,
+    .sobremesas-container,
+    .bebidas-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .entradas-info,
+    .principais-info,
+    .sobremesas-info,
+    .bebidas-info {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
